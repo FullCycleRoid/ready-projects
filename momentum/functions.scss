@@ -1,0 +1,9 @@
+
+
+@function change-color($background) {
+  @if (lightness($background > 50)) {
+    @return black
+  } @else {
+    @return white
+  }
+}

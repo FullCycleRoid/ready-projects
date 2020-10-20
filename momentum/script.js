@@ -1,8 +1,13 @@
 // DOM Elements
+const days = ['Воскресение', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
+
 const time = document.querySelector('.time'),
   greeting = document.querySelector('.greeting'),
   name = document.querySelector('.name'),
-  focus = document.querySelector('.focus');
+  focus = document.querySelector('.focus'),
+  city = document.getElementById('city'),
+  backgroundBtn = document.querySelectorAll('.btn')[0],
+  jokeBtn = document.querySelectorAll('.btn')[1];
 
 // Options
 const showAmPm = true;
@@ -31,6 +36,14 @@ function showTime() {
 // Add Zeros
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
+}
+
+function getCity() {
+  if (city.value === '') {
+    showTime()
+  } else {
+
+  }
 }
 
 // Set Background and Greeting
@@ -105,6 +118,9 @@ name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
+city.addEventListener('input', (e)=>{
+  getCity()
+})
 
 // Run
 showTime();
